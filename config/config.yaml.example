@@ -1,0 +1,127 @@
+# AI模型配置
+ai:
+  # 当前使用的模型类型: deepseek, openai, claude, gemini, custom, ali
+  current_model: "ali"
+  
+  # OpenAI配置
+  openai:
+    api_key: "your-openai-api-key"
+    model: "gpt-4-turbo-preview"
+    temperature: 0.7
+    max_tokens: 1000
+    
+  # Claude配置
+  claude:
+    api_key: "your-claude-api-key"
+    model: "claude-3-opus-20240229"
+    temperature: 0.7
+    max_tokens: 1000
+    
+  # DeepSeek配置
+  deepseek:
+    api_key: "your-deepseek-api-key"
+    model: "deepseek-v3"
+    temperature: 0.7
+    max_tokens: 1000
+    
+  # Gemini配置
+  gemini:
+    api_key: "your-gemini-api-key"
+    model: "gemini-pro"
+    temperature: 0.7
+    max_tokens: 1000
+
+  ali:
+    api_key: "your-ali-api-key"
+    model: "deepseek-v3"
+    temperature: 0.7
+    max_tokens: 1000
+    
+  # 自定义模型配置
+  custom:
+    api_endpoint: "your-custom-api-endpoint"
+    api_key: "your-custom-api-key"
+    model: "deepseek-v3"
+    temperature: 0.7
+    max_tokens: 1000
+    timeout: 30  # 添加超时设置，单位秒
+    max_retries: 3  # 添加最大重试次数
+
+# 游戏参数
+game:
+  # 游戏模式: standard(标准模式), challenge(挑战模式), story(故事模式)
+  mode: "standard"
+  
+  # 游戏难度: easy(简单), medium(中等), hard(困难)
+  difficulty: "medium"
+  
+  # 根据难度设置的最大提问次数
+  max_questions:
+    easy: 30
+    medium: 20
+    hard: 15
+  
+  # 提示系统
+  hints:
+    enabled: true
+    max_hints:
+      easy: 5
+      medium: 3
+      hard: 2
+    
+  # 游戏主题
+  themes:
+    # 主流主题
+    - "悬疑"
+    - "科幻"
+    - "奇幻"
+    - "现实"
+    - "历史"
+    - "爱情"
+    - "冒险"
+    - "推理"
+    - "心理"
+    - "社会"
+    # 非主流主题
+    - "灵异"
+    - "恐怖"
+    - "血腥"
+    - "黑暗"
+    - "超自然"
+    - "神秘"
+    - "诡异"
+    - "惊悚"
+    - "怪诞"
+    - "禁忌"
+    
+  # 语言设置
+  language: "zh-CN"
+
+# TTS配置
+tts:
+  enabled: false
+  provider: "azure"  # azure, google, custom
+  
+  # Azure TTS配置
+  azure:
+    subscription_key: "your-azure-subscription-key"
+    region: "your-azure-region"
+    voice_name: "zh-CN-XiaoxiaoNeural"
+    
+  # Google TTS配置
+  google:
+    api_key: "your-google-api-key"
+    voice_name: "zh-CN-Standard-A"
+    
+  # 自定义TTS配置
+  custom:
+    api_endpoint: "your-custom-tts-endpoint"
+    api_key: "your-custom-tts-key"
+    voice_id: "your-custom-voice-id"
+
+# 日志配置
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "game.log"
+  max_size: 10485760  # 10MB
+  backup_count: 5
